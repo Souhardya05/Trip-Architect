@@ -1,6 +1,8 @@
 
 # Trip Architect
 
+[🔗 Live Demo](https://trip-architect-lime.vercel.app/) • [📁 GitHub Repository](https://github.com/Souhardya05/Trip-Architect.git)
+
 Trip Architect is a web-based travel planning app designed to visualize travel paths and solve navigation problems using graph algorithms. The application utilizes Dijkstra's algorithm to determine the least-time path between two randomly selected cities.
 
 ## Features
@@ -44,8 +46,6 @@ Trip Architect is a web-based travel planning app designed to visualize travel p
 4. Push to the branch (`git push origin feature/your-feature-name`).
 5. Open a pull request.
 
-## License
-This project is licensed under the MIT License.
 
 ## Acknowledgments
 - Thanks to the open-source community for libraries like Bootstrap, Vis.js, and FontAwesome.
