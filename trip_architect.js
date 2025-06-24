@@ -1,6 +1,6 @@
 const getElementById = (id) => document.getElementById(id);
 
-var currentData, vertexCount, source, destination; // Current data, size, source, destination
+var currentData, vertexCount, source, destination; 
 
 const locationNames = [
     'Delhi', 'Mumbai', 'Chennai', 'Kolkata', 'Bangalore', 
@@ -15,8 +15,7 @@ onload = function() {
     const solveProblemButton = getElementById('solve_problem');
     const problemText = getElementById('problem_text'); 
     
-    // Initialise graph options
-    // only the options that have shorthand notations are shown.    
+    
     const options = {
         edges: {
             labelHighlightBold: true
@@ -30,7 +29,7 @@ onload = function() {
             shape: 'icon',
             icon: {
                 face: 'FontAwesome',
-                code: '\uf3c5', // Location pin icon
+                code: '\uf3c5', 
                 size: 40,
                 color: '#000080',
             }
@@ -45,20 +44,6 @@ onload = function() {
     solutionNetwork.setOptions(options);
     
 
-    /**
-     * Generates a random graph data structure with nodes and edges.
-     * 
-     * The function creates a random number of vertices (between 3 and 10) and 
-     * assigns each vertex an id and a label from the `locationNames` array. It then 
-     * creates a tree-like structure by connecting each vertex to a random neighbor 
-     * with an edge. Each edge is assigned a random weight (between 3 and 12) and 
-     * colored orange. The function also randomly selects a source and destination 
-     * vertex.
-     * 
-     * @returns {Object} An object containing the generated nodes and edges.
-     * @returns {Object[]} return.nodes - Array of vertex objects with `id` and `label`.
-     * @returns {Object[]} return.edges - Array of edge objects with `from`, `to`, `color`, and `label`.
-     */
     function createGraphData() {
         vertexCount = Math.min(Math.floor(Math.random() * locationNames.length) + 3, 10);
 
@@ -96,7 +81,7 @@ onload = function() {
     }
 
     getProblemButton.onclick = function () {
-        // Create new data and display the data
+        
         currentData = createGraphData();
         problemNetwork.setData(currentData);
         problemText.innerText = 'Find least time path from ' + locationNames[source] + ' to ' + locationNames[destination];
@@ -104,7 +89,7 @@ onload = function() {
     };
 
     solveProblemButton.onclick = function () {
-        // Create graph from data and set to display
+        
         container2.style.display = "inline";
 
         let solvedData = solveGraphData(vertexCount);
@@ -123,7 +108,7 @@ onload = function() {
         for (let i = 0; i < size; i++)
             distances.push([100000, -1]);
 
-        distances[source][0] = 0;   // distance of source to 0 
+        distances[source][0] = 0;   
 
         for (let i = 0; i < size - 1; i++) {
             let minIndex = -1;
@@ -165,7 +150,7 @@ onload = function() {
 
         let distances = dijkstra(graph, vertexCount, source);
 
-        if (distances[vertexCount - 1][1] == -1) // No route exists
+        if (distances[vertexCount - 1][1] == -1) 
         {
             return null;
         }
